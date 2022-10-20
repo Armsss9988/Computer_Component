@@ -1,0 +1,77 @@
+﻿namespace ConsoleApp4
+{
+    internal class LaptopStorage : StorageManagement
+    {
+        private static LaptopStorage _laptopStorage;
+        private LaptopStorage() { }
+        public static LaptopStorage GetLaptopStorage()
+        {
+            if (_laptopStorage == null)
+            {
+                _laptopStorage = new LaptopStorage();
+            }
+            return _laptopStorage;
+        }
+        private List<Laptop> _laptops = new List<Laptop>();
+        public List<Laptop> GetLaptops()
+        {
+            return _laptops;
+        }
+        //crud
+        public void AddInformation()
+        {
+            Laptop laptop = new();
+            laptop.CreateInformation();
+            _laptops.Add(laptop);
+        }
+        public Laptop FindLaptopByID(int id)
+        {
+            Laptop result = null;
+            foreach (Laptop laptop in _laptops)
+            {
+                if (laptop.Id == id)
+                {
+                    result = laptop;
+                }
+            }
+            return result;
+        }
+
+        public void DeleteInformation()
+        {
+            Console.Write("Type id: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            if (FindLaptopByID(id) != null)
+            {
+                _laptops.Remove(FindLaptopByID(id));
+            }
+            else
+            {
+                Console.WriteLine("Laptop not found");
+            }
+        }
+
+        public void DisplayInformation()
+        {
+            foreach (Laptop laptop in _laptops)
+            {
+                laptop.DisplayInformation();
+            }
+        }
+
+        public void UpdateInformation()
+        {
+            Console.Write("Enter Updating laptop's ID: ");
+            int ID = Convert.ToInt32(Console.ReadLine());
+            Laptop laptop = FindLaptopByID(ID);
+            if (laptop != null)
+            {
+                laptop.UpdateInformation();
+            }
+            else
+            {
+                Console.WriteLine("No ID found!!!");
+            }
+        }
+    }
+}
