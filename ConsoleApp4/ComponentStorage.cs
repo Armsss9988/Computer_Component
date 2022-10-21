@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp4
 {
-    internal class ComponentStorage : StorageManagement
+    internal class ComponentStorage : IStorageManagement
     {
         private static ComponentStorage _componentStorage;
         private ComponentStorage() { }
@@ -12,7 +12,7 @@
             }
             return _componentStorage;
         }
-        private List<Component> _components = new List<Component>();
+        private List<Component> _components = new();
         public List<Component> GetComponents()
         {
             return _components;

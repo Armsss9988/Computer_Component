@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp4
 {
-    internal class LaptopStorage : StorageManagement
+    internal class LaptopStorage : IStorageManagement
     {
         private static LaptopStorage _laptopStorage;
         private LaptopStorage() { }

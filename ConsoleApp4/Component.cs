@@ -12,7 +12,7 @@
         }
         //componentCRUD
         public Component() { }
-        public void CreateInformation()
+        public override void CreateInformation()
         {
             base.CreateInformation();
             Console.Write("Type Component Type: ");
@@ -20,7 +20,7 @@
             Console.Write("Type Component Parameter: ");
             Parameter = Console.ReadLine();
         }
-        public void UpdateInformation()
+        public override void UpdateInformation()
         {
             base.UpdateInformation();
             string type = Console.ReadLine();
@@ -34,7 +34,7 @@
                 Parameter = parameter;
             }
         }
-        public void DisplayInformation()
+        public override void DisplayInformation()
         {
             base.DisplayInformation();
             Console.WriteLine("Type: " + Type);

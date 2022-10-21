@@ -11,13 +11,13 @@
         }
         public Laptop() { }
         //lapcrud
-        public void CreateInformation()
+        public override void CreateInformation()
         {
             base.CreateInformation();
             Console.Write("Type Category: ");
             Category = Console.ReadLine();
         }
-        public void UpdateInformation()
+        public override void UpdateInformation()
         {
             base.UpdateInformation();
             string category = Console.ReadLine();
@@ -26,7 +26,7 @@
                 Category = category;
             }
         }
-        public void DisplayInformation()
+        public override void DisplayInformation()
         {
             base.DisplayInformation();
             Console.WriteLine("Category: " + Category);

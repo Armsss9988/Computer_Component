@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp4
 {
-    internal interface StorageManagement
+    internal interface IStorageManagement
     {
         public void AddInformation();
         public void DeleteInformation();

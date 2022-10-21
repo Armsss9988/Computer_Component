@@ -24,7 +24,7 @@ namespace ConsoleApp4
         }
         public Product() { }
 
-        public void CreateInformation()
+        public virtual void CreateInformation()
         {
             Console.Write("Type Product Name: ");
             Name = Console.ReadLine();
@@ -33,14 +33,14 @@ namespace ConsoleApp4
             Console.Write("Type Product Price: ");
             Price = decimal.Parse(Console.ReadLine());
         }
-        public void DisplayInformation()
+        public virtual void DisplayInformation()
         {
             Console.WriteLine("ID: " + _id);
             Console.WriteLine("Name: " + _name);
             Console.WriteLine("Manufacturer: " + _manufacturerName);
             Console.WriteLine("Price: " + _price);
         }
-        public void UpdateInformation()
+        public virtual void UpdateInformation()
         {
             Console.WriteLine("Updating (Enter to skip update): ");
             Console.Write("Update name: ");
