@@ -3,7 +3,7 @@
     internal class LaptopPart
     {
         public int ID;
-        public Component LaptopComponent;
+        public Component? LaptopComponent;
         public int Quantity;
         public void CreatePartInformation()
         {
