@@ -79,8 +79,10 @@
         {
             foreach (LaptopImport bill in LaptopImportList)
             {
+                Console.WriteLine("=============================================");
                 bill.Note();
                 bill.DisplayInformation();
+                Console.WriteLine("=============================================");
             }
         }
         //PartCRUD
@@ -120,7 +122,9 @@
         {
             foreach (LaptopPart part in LaptopPartList)
             {
+                Console.WriteLine("=============================================");
                 part.DisplayPartInformation();
+                Console.WriteLine("=============================================");
             }
         }
         public void DeleteComponentInformation()

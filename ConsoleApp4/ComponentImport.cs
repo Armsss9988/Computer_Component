@@ -9,12 +9,10 @@
 
         public override void Note()
         {
-            Console.WriteLine("{1} component {2} is imported on {2}.", Quantity, DateImport);
+            Console.WriteLine("{0} component is imported on {1}.", Quantity, DateImport);
         }
         public override void CreateInformation()
         {
-            Console.Write("Type Component Import ID: ");
-            ID = int.Parse(Console.ReadLine());
             Console.Write("Type Date Import: ");
             string importDate = Console.ReadLine();
             DateImport = DateTime.ParseExact(importDate, format, provider);
@@ -23,9 +21,9 @@
         }
         public override void DisplayInformation()
         {
-            Console.Write("Component Import ID: " + ID);
-            Console.Write("Component Import Quantity: " + Quantity);
-            Console.Write("Component Import Date: " + DateImport);
+            Console.WriteLine("Component Import ID: " + ID);
+            Console.WriteLine("Component Import Quantity: " + Quantity);
+            Console.WriteLine("Component Import Date: " + DateImport);
         }
     }
 }

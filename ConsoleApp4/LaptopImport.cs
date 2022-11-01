@@ -18,14 +18,14 @@ namespace ConsoleApp4
         }
         public override void DisplayInformation()
         {
-            Console.Write("Laptop Import ID: " + ID);
-            Console.Write("Laptop Import Quantity: " + Quantity);
-            Console.Write("Laptop Import Date: " + DateImport);
+            Console.WriteLine("Laptop Import ID: " + ID);
+            Console.WriteLine("Laptop Import Quantity: " + Quantity);
+            Console.WriteLine("Laptop Import Date: " + DateImport.ToString());
         }
 
         public override void Note()
         {
-            Console.WriteLine("{1} Laptop is imported on {2}.", Quantity, DateImport);
+            Console.WriteLine("{0} Laptop is imported on {1}.", Quantity, DateImport.ToString());
         }
     }
 }

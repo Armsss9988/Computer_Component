@@ -89,8 +89,10 @@
         {
             foreach (ComponentImport bill in ComponentImportList)
             {
+                Console.WriteLine("=============================================");
                 bill.Note();
                 bill.DisplayInformation();
+                Console.WriteLine("=============================================");
             }
         }
     }

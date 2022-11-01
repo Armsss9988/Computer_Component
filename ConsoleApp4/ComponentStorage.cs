@@ -64,7 +64,9 @@
         {
             foreach (Component component in _components)
             {
+                Console.WriteLine("=============================================");
                 component.DisplayInformation();
+                Console.WriteLine("=============================================");
             }
         }
 

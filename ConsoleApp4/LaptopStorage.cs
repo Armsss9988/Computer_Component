@@ -18,9 +18,22 @@
             return _laptops;
         }
         //crud
+        private int IdentityLaptopID()
+        {
+            int max = 0;
+            foreach (Laptop laptop in _laptops)
+            {
+                if (laptop.Id >= max)
+                {
+                    max = laptop.Id + 1;
+                }
+            }
+            return max;
+        }
         public void AddInformation()
         {
             Laptop laptop = new();
+            laptop.Id = IdentityLaptopID();
             laptop.CreateInformation();
             _laptops.Add(laptop);
         }
@@ -55,7 +68,9 @@
         {
             foreach (Laptop laptop in _laptops)
             {
+                Console.WriteLine("=============================================");
                 laptop.DisplayInformation();
+                Console.WriteLine("=============================================");
             }
         }
 
