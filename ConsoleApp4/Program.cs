@@ -6,6 +6,10 @@
         {
             ComponentStorage componentStorage = ComponentStorage.GetComponentStorage();
             LaptopStorage laptopStorage = LaptopStorage.GetLaptopStorage();
+            ListofLaptopImport laptopImportList = new();
+            ListOfComponentImport componentImport = new();
+
+
             while (true)
             {
                 Console.Clear();
@@ -123,17 +127,15 @@
                                         }
                                         break;
                                     case 6:
-                                        Console.Write("Enter laptop id: ");
-                                        int pid = Convert.ToInt32(Console.ReadLine());
-                                        Laptop plaptop = laptopStorage.FindLaptopByID(pid);
+
                                         bool kh = true;
                                         while (kh)
                                         {
                                             Console.Clear();
                                             Console.WriteLine("*========================================*");
-                                            Console.WriteLine("||        1. Add Part.                  ||");
-                                            Console.WriteLine("||        2. Delete Part.               ||");
-                                            Console.WriteLine("||        3. Display Part.              ||");
+                                            Console.WriteLine("||        1. Add Import.                  ||");
+                                            Console.WriteLine("||        2. Delete Import.               ||");
+                                            Console.WriteLine("||        3. Display Import.              ||");
                                             Console.WriteLine("||        4. Back.                      ||");
                                             Console.WriteLine("*========================================*");
                                             Console.Write("Choose option:");
@@ -142,21 +144,24 @@
                                             {
                                                 case 1:
                                                     Console.WriteLine("Add Import!!!");
-                                                    plaptop.AddImportInformation();
+                                                    Console.Write("Enter laptop id: ");
+                                                    int pid = Convert.ToInt32(Console.ReadLine());
+                                                    Laptop plaptop = laptopStorage.FindLaptopByID(pid);
+                                                    laptopImportList.AddImportInformation(plaptop);
                                                     Console.WriteLine("Input success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 2:
                                                     Console.WriteLine("Delete Import!!!");
-                                                    plaptop.DeleteImportInformation();
+                                                    laptopImportList.DeleteImportInformation();
                                                     Console.WriteLine("Delete success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 3:
                                                     Console.WriteLine("Display Import!!!");
-                                                    plaptop.DisplayImportInformation();
+                                                    laptopImportList.DisplayImportInformation();
                                                     Console.WriteLine("Display success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
@@ -210,14 +215,14 @@
                                         Console.ReadKey();
                                         break;
                                     case 2:
-                                        Console.WriteLine("Update Laptop!!!");
+                                        Console.WriteLine("Update Component!!!");
                                         componentStorage.UpdateInformation();
                                         Console.WriteLine("Update success");
                                         Console.WriteLine("Type any key to continue");
                                         Console.ReadKey();
                                         break;
                                     case 3:
-                                        Console.WriteLine("Delete Laptop!!!");
+                                        Console.WriteLine("Delete Component!!!");
                                         componentStorage.DeleteInformation();
                                         Console.WriteLine("Delete success");
                                         Console.WriteLine("Type any key to continue");
@@ -230,9 +235,6 @@
                                         Console.ReadKey();
                                         break;
                                     case 5:
-                                        Console.Write("Enter component id: ");
-                                        int id = Convert.ToInt32(Console.ReadLine());
-                                        Component component = componentStorage.FindComponentByID(id);
                                         bool p = true;
                                         while (p)
                                         {
@@ -241,7 +243,7 @@
                                             Console.WriteLine("||        1. Add Import.                  ||");
                                             Console.WriteLine("||        2. Delete Import.               ||");
                                             Console.WriteLine("||        3. Display Import.              ||");
-                                            Console.WriteLine("||        4. Back.                      ||");
+                                            Console.WriteLine("||        4. Back.                        ||");
                                             Console.WriteLine("*========================================*");
                                             Console.Write("Choose option:");
                                             int m = Convert.ToInt32(Console.ReadLine());
@@ -249,21 +251,24 @@
                                             {
                                                 case 1:
                                                     Console.WriteLine("Add Part!!!");
-                                                    component.AddImportInformation();
+                                                    Console.Write("Enter component id: ");
+                                                    int id = Convert.ToInt32(Console.ReadLine());
+                                                    Component component = componentStorage.FindComponentByID(id);
+                                                    componentImport.AddImportInformation(component);
                                                     Console.WriteLine("Input success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 2:
                                                     Console.WriteLine("Delete part!!!");
-                                                    component.DeleteImportInformation();
+                                                    componentImport.DeleteImportInformation();
                                                     Console.WriteLine("Delete success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 3:
                                                     Console.WriteLine("Display Part!!!");
-                                                    component.DisplayImportInformation();
+                                                    componentImport.DisplayImportInformation();
                                                     Console.ReadKey();
                                                     Console.WriteLine("Display success");
                                                     Console.WriteLine("Type any key to continue");

@@ -3,7 +3,7 @@ namespace ConsoleApp4
 {
     internal class LaptopImport : ProductImport
     {
-
+        public Laptop? Laptop;
         public LaptopImport(int id, DateTime dateImport, int quantity) : base(id, dateImport, quantity)
         {
         }
@@ -20,12 +20,13 @@ namespace ConsoleApp4
         {
             Console.WriteLine("Laptop Import ID: " + ID);
             Console.WriteLine("Laptop Import Quantity: " + Quantity);
-            Console.WriteLine("Laptop Import Date: " + DateImport.ToString());
+            Console.WriteLine("Laptop Import Date: " + DateImport.ToString("dd/mm/yyyy"));
+            Console.WriteLine("Laptop name: " + Laptop?.Name);
         }
 
         public override void Note()
         {
-            Console.WriteLine("{0} Laptop is imported on {1}.", Quantity, DateImport.ToString());
+            Console.WriteLine("{0} Laptop {1} is imported on {2}.", Quantity, Laptop?.Name, DateImport.ToString("dd/mm/yyyy"));
         }
     }
 }

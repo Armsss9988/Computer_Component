@@ -2,6 +2,7 @@
 {
     internal class ComponentImport : ProductImport
     {
+        public Component? Component;
         public ComponentImport(int id, DateTime dateImport, int quantity) : base(id, dateImport, quantity)
         {
         }
@@ -9,7 +10,7 @@
 
         public override void Note()
         {
-            Console.WriteLine("{0} component is imported on {1}.", Quantity, DateImport);
+            Console.WriteLine("{0} component {1} is imported on {2}.", Quantity, Component?.Name, DateImport.ToString("dd/mm/yyyy"));
         }
         public override void CreateInformation()
         {
@@ -23,7 +24,8 @@
         {
             Console.WriteLine("Component Import ID: " + ID);
             Console.WriteLine("Component Import Quantity: " + Quantity);
-            Console.WriteLine("Component Import Date: " + DateImport);
+            Console.WriteLine("Component Import Date: " + DateImport.ToString("dd/mm/yyyy"));
+            Console.WriteLine("Component Name: " + Component?.Name);
         }
     }
 }
