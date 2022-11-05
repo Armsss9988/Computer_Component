@@ -4,8 +4,9 @@
     {
         public string Category;
         public List<LaptopPart> LaptopPartList = new();
-        public Laptop(int id, string name, string manufacterName, decimal price) : base(id, name, manufacterName, price)
+        public Laptop(int id, string name, string manufacterName, decimal price, string category) : base(id, name, manufacterName, price)
         {
+            Category = category;
         }
         public Laptop() { }
         //lapcrud

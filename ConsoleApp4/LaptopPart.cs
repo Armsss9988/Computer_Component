@@ -5,6 +5,17 @@
         public int ID;
         public Component? LaptopComponent;
         public int Quantity;
+
+        public LaptopPart(int iD, Component? laptopComponent, int quantity)
+        {
+            ID = iD;
+            LaptopComponent = laptopComponent;
+            Quantity = quantity;
+        }
+        public LaptopPart()
+        {
+
+        }
         public void CreatePartInformation()
         {
 

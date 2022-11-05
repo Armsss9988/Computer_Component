@@ -1,15 +1,25 @@
-﻿namespace ConsoleApp4
+﻿
+using System.Globalization;
+
+namespace ConsoleApp4
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            string format = "dd/mm/yyyy";
             ComponentStorage componentStorage = ComponentStorage.GetComponentStorage();
             LaptopStorage laptopStorage = LaptopStorage.GetLaptopStorage();
             ListofLaptopImport laptopImportList = new();
-            ListOfComponentImport componentImport = new();
-
-
+            ListOfComponentImport componentImportList = new();
+            Component ram4 = new Component(0, "Ram Kingston 4GB ddr4", "Kingston", 500, "Ram", "4gb");
+            Component ram8 = new Component(0, "Ram Kingston 8GB ddr4", "Kingston", 800, "Ram", "8gb");
+            ComponentImport componentImport1 = new(0, DateTime.ParseExact("01/11/2022", format, provider), 6, ram4);
+            componentImportList.ComponentImportList.Add(componentImport1);
+            LaptopPart part1 = new LaptopPart(0, ram4, 2);
+            Laptop laptop1 = new Laptop(0, "DELL G3", "DELL G3", 15000000, "Gaming");
+            laptop1.LaptopPartList.Add(part1);
             while (true)
             {
                 Console.Clear();
@@ -254,21 +264,21 @@
                                                     Console.Write("Enter component id: ");
                                                     int id = Convert.ToInt32(Console.ReadLine());
                                                     Component component = componentStorage.FindComponentByID(id);
-                                                    componentImport.AddImportInformation(component);
+                                                    componentImportList.AddImportInformation(component);
                                                     Console.WriteLine("Input success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 2:
                                                     Console.WriteLine("Delete part!!!");
-                                                    componentImport.DeleteImportInformation();
+                                                    componentImportList.DeleteImportInformation();
                                                     Console.WriteLine("Delete success");
                                                     Console.WriteLine("Type any key to continue");
                                                     Console.ReadKey();
                                                     break;
                                                 case 3:
                                                     Console.WriteLine("Display Part!!!");
-                                                    componentImport.DisplayImportInformation();
+                                                    componentImportList.DisplayImportInformation();
                                                     Console.ReadKey();
                                                     Console.WriteLine("Display success");
                                                     Console.WriteLine("Type any key to continue");

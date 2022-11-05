@@ -2,7 +2,7 @@
 {
     internal class ListOfComponentImport
     {
-        List<ComponentImport> ComponentImportList = new();
+        public List<ComponentImport> ComponentImportList = new();
         //importCRUD
         int IdentityComponentImportID()
         {

@@ -4,8 +4,9 @@ namespace ConsoleApp4
     internal class LaptopImport : ProductImport
     {
         public Laptop? Laptop;
-        public LaptopImport(int id, DateTime dateImport, int quantity) : base(id, dateImport, quantity)
+        public LaptopImport(int id, DateTime dateImport, int quantity, Laptop? laptop) : base(id, dateImport, quantity)
         {
+            laptop = laptop;
         }
         public LaptopImport() { }
         public override void CreateInformation()

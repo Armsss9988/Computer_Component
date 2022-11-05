@@ -4,12 +4,16 @@
     {
         public string Type;
         public string Parameter;
-        public List<ComponentImport> ComponentImportList = new();
 
-        public Component(int id, string name, string manufacturerName, decimal price)
-            : base(id, name, manufacturerName, price)
+        public Component(int id, string name, string manufacturerName, decimal price, string type, string parameter) : base(id, name, manufacturerName, price)
         {
+            Type = type;
+            Parameter = parameter;
         }
+
+
+
+
         //componentCRUD
         public Component() { }
         public override void CreateInformation()

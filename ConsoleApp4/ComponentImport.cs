@@ -3,8 +3,9 @@
     internal class ComponentImport : ProductImport
     {
         public Component? Component;
-        public ComponentImport(int id, DateTime dateImport, int quantity) : base(id, dateImport, quantity)
+        public ComponentImport(int id, DateTime dateImport, int quantity, Component? component) : base(id, dateImport, quantity)
         {
+            Component = component;
         }
         public ComponentImport() { }
 

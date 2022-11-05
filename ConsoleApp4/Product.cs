@@ -1,11 +1,8 @@
-﻿using System.Globalization;
-
-namespace ConsoleApp4
+﻿namespace ConsoleApp4
 {
     public class Product
     {
-        public CultureInfo provider = CultureInfo.InvariantCulture;
-        public string format = "dd/mm/yyyy";
+
         private int _id;
         private string _name;
         private string _manufacturerName;
